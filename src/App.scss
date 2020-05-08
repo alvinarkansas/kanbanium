@@ -1,0 +1,359 @@
+$dark: #2B3042;
+$darker: #1C1F2A;
+$bright: #FFF;
+$dimmed-bright: rgba(255, 255, 255, .5);
+$small-padding: .5rem 3rem;
+$large-padding: 2rem 3rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: $darker;
+  color: $bright;
+  overflow-x: hidden;
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+nav {
+  background: $dark;
+  color: $bright;
+  @include flexCenter(row);
+  width: 100vw;
+  height: 5rem;
+  justify-content: space-between;
+  padding: $small-padding;
+  div {
+    @include flexCenter(row);
+    p {
+      margin-right: 3rem;
+    }
+  }
+  img {
+    width: 125px;
+    margin-right: 2rem;
+  }
+}
+
+main {
+  padding: $large-padding;
+  @include flexCenter(row);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background: $darker;
+  color: $bright;
+}
+
+.kanban {
+  min-height: 4rem;
+  min-width: 15rem;
+  width: 15rem;
+  border: 1px solid $dimmed-bright;
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.act {
+  @include flexCenter(row);
+  width: 100%;
+  min-height: 2rem;
+  border-radius: 2px;
+  margin-top: 1rem;
+  justify-content: space-between;
+  box-shadow: 0px 3px 4px -1px rgba(0,0,0,0.48);
+  padding: .5rem;
+  cursor: pointer;
+  div {
+    height: 100%;
+    width: 1.35rem;
+    height: 2.35rem;
+    border-radius: 2px;
+    @include flexCenter(row);
+    &:nth-child(2) {
+      background: inherit;
+      width: 100%;
+      text-align: center;
+      p {
+        font-size: .9rem;
+      }
+    }
+  }
+}
+
+.move-btn {
+  &:hover {
+    background: $dimmed-bright;
+  }
+}
+
+.add-act {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  input {
+    font-family: inherit;
+    height: 3rem;
+    width: 100%;
+    padding: .25rem .5rem;
+    border-radius: 2px;
+    border: 1px solid #4F5D75;
+    background-color: #FFF;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F2F5F8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AF0066;
+}
+
+.modal {
+  position: absolute;
+  top: 12.5rem;
+  left: 30rem;
+  right: 30rem;
+  bottom: 12.5rem;
+  border-radius: 4px;
+  background: $dark;
+}
+
+.modal > div {
+  padding: 1rem 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  .close-btn {
+    padding: .5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+      background: $dimmed-bright;
+      color: maroon;
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.48);
+}
+
+#option {
+  display: flex;
+  justify-content: space-between;
+}
+
+.big-btn {
+  @include flexCenter(row);
+  background: grey;
+  width: 100%;
+  height: 3rem;
+  transition: .3s;
+  cursor: pointer;
+  &:hover {
+    background: $darker;
+  }
+}
+
+.outline-form {
+  width: 80%;
+  input {
+    font-family: inherit;
+    width: 100%;
+    padding: .25rem .5rem;
+    border-radius: 2px;
+    border: none;
+    border-bottom: 1px solid $bright;
+    background-color: inherit;
+    color: $bright;
+    font-size: 1.5rem;
+  }
+}
+
+.the-btn {
+  cursor: pointer;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  font-family: inherit;
+  color: $bright;
+  font-size: 1.25rem;
+  transition: .3s;
+  &:hover {
+    filter: hue-rotate(180deg);
+  }
+}
+
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.crimson {
+  background: #AF0066;
+}
+
+.night {
+  background: #2c90ca;
+}
+
+.violet {
+  background: #7E11A1;
+}
+
+.leaf {
+  background: #089C72;
+}
+
+.page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.extra-mb {
+  margin-bottom: 1.5rem;
+}
+
+.welcome-container {
+  height: 100%;
+  width: 70%;
+  clip-path: polygon(0 0, 91% 0, 100% 100%, 0% 100%);
+  background-image: url('./assets/rodion-kutsaev-049M_crau5k-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
+  img {
+    width: 140px;
+  }
+}
+
+.welcome-text {
+  font-size: 5.5rem;
+}
+
+.form-container {
+  height: 100%;
+  width: 30%;
+  @include flexCenter(column);
+  padding: 0 3rem;
+  h2 {
+    margin-bottom: 3rem;
+  }
+}
+
+.the-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    margin-top: 2rem;
+  }
+}
+
+.minimal {
+  border: none;
+  padding: 1rem .5rem;
+  font-family: inherit;
+  width: 100%;
+  border-radius: 2px;
+  border-bottom: 1px solid $bright;
+  background-color: $darker;
+  color: $bright;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #089C72;
+}
+
+.txt-crimson {
+  color: #AF0066;
+}
+
+.txt-night {
+  color: #43a0d6;
+}
+
+.txt-violet {
+  color: #9f37c2;
+}
+
+.txt-leaf {
+  color: #089C72;
+}
+
+.txt-logout {
+  color: #df0e0e;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    color: #AF0066;
+  }
+}
+
+@media (max-width: 1200px) {
+  .modal {
+    position: absolute;
+    top: 5rem;
+    left: 10rem;
+    right: 10rem;
+    bottom: 5rem;
+    border-radius: 4px;
+    background: $dark;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal {
+    position: absolute;
+    top: 5rem;
+    left: 10rem;
+    right: 10rem;
+    bottom: 5rem;
+    border-radius: 4px;
+    background: $dark;
+  }
+}
+
