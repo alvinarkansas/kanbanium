@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Kanbanium
 
-## Available Scripts
+Task organizer app that lets you easily control and monitor all of your activities. This web app suits your busy day perfectly. Simply visit https://www.kanbanium.com
 
-In the project directory, you can run:
+### `Sign In`
 
-### `npm start`
+On the landing page, fill your account information (email and password). If you have no account, you can just click the google button to sign in with google or create a new one by clicking 'Join us'.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `Sign Up`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Input your name, email, and password. Click that sign up button and you are ready to go.
 
-### `npm test`
+### `Adding New Activity`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You'll notice there are 4 columns on your screen (Backlog, On Progress, Needs Review, and Finished). And in the column that says Backlog, there is a blank white little form. Try typing a new activity there and hit enter.
 
-### `npm run build`
+Congrats! Your first activity is successfully added. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Moving Your Activity`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Now you might wanna work on that activity you just added. Do not forget to click that tiny arrow on your activity and see what will happen.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You moved it to the `On Progress` column! Nicely done. 
 
-### `npm run eject`
+If you finish that activity in the real world and you need someone to review your activity, move it to the next column by hitting that arrow again.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+It is now in the `Needs Review` column. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Well it turns out your work still needs something to fix. Simply click the left arrow to get it back to the previous column.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+And when you're actually done with your work you can just click that right arrow until it reaches the `Finished` column.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `Editing Activity`
 
-## Learn More
+In the middle of our journey sometimes we want to change what we're doing, or maybe we just misspelled word and want to edit the activity. Get into it now:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Click on the activity
+2. Edit your activity title
+3. Click `save changes`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `Deleting Activity`
 
-### Code Splitting
+Cancelled appointment? Your friend bails on you? Abort your mission easily by following these steps:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Click on the activity
+2. Click `delete`
