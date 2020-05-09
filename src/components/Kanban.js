@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Act from './Act';
 import { useDispatch, useSelector } from 'react-redux';
-import { FETCH_ACTIVITIES, ADD_ACTIVITY } from '../store/action';
+import { ADD_ACTIVITY } from '../store/action';
 import BounceLoader from 'react-spinners/BounceLoader';
 
 function Kanban({ title, acts, props }) {
@@ -17,7 +17,6 @@ function Kanban({ title, acts, props }) {
     e.preventDefault();
     dispatch(ADD_ACTIVITY(newAct));
     setNewAct('');
-    dispatch(FETCH_ACTIVITIES());
   }
 
   return (

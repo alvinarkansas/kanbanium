@@ -47,6 +47,7 @@ export function ADD_ACTIVITY(data) {
             }
         })
             .then(({ data }) => {
+                dispatch(FETCH_ACTIVITIES());
                 console.log('added new activity', data);
                 notification('success', 'Added new activity', data.title)
             })
