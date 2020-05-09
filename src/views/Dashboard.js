@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FETCH_ACTIVITIES } from '../store/action';
 import Kanban from '../components/Kanban';
 import Nav from '../components/Nav';
+import { Spring } from 'react-spring/renderprops'
+// import { useSpring, animated } from 'react-spring';
 
 function Dashboard() {
   const dispatch = useDispatch();
@@ -21,10 +23,30 @@ function Dashboard() {
     <>
       <Nav />
       <main>
-        <Kanban title="Backlog" acts={backlog} />
+        <Spring
+          from={{ transform: 'translate3d(0,-40px,0)', opacity: 0 }}
+          to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}>
+          {props => <Kanban title="Backlog" acts={backlog} props={props} />}
+        </Spring>
+        <Spring
+          from={{ transform: 'translate3d(0,-40px,0)', opacity: 0 }}
+          to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}>
+          {props => <Kanban title="On Progress" acts={onProgress} props={props} />}
+        </Spring>
+        <Spring
+          from={{ transform: 'translate3d(0,-40px,0)', opacity: 0 }}
+          to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}>
+          {props => <Kanban title="Needs Review" acts={needsReview} props={props} />}
+        </Spring>
+        <Spring
+          from={{ transform: 'translate3d(0,-40px,0)', opacity: 0 }}
+          to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}>
+          {props => <Kanban title="Finished" acts={finished} props={props} />}
+        </Spring>
+        {/* <Kanban title="Backlog" acts={backlog} />
         <Kanban title="On Progress" acts={onProgress} />
         <Kanban title="Needs Review" acts={needsReview} />
-        <Kanban title="Finished" acts={finished} />
+        <Kanban title="Finished" acts={finished} /> */}
       </main>
     </>
   )

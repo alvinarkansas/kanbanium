@@ -345,7 +345,7 @@ main {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .modal {
     position: absolute;
     top: 5rem;
@@ -354,6 +354,24 @@ main {
     bottom: 5rem;
     border-radius: 4px;
     background: $dark;
+  }
+  .welcome-container {
+    display: none;
+  }
+  .form-container {
+    width: 100%;
+    padding: 0;
+  }
+  nav div:nth-child(1) {
+    display: none;
+  }
+  nav div:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    p {
+      margin: 0;
+    }
   }
 }
 

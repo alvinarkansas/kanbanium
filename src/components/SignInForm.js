@@ -42,7 +42,7 @@ export default function SignInForm() {
     console.log(googleUser);
     // `googleUser` is the GoogleUser object that represents the just-signed-in user.
     // See https://developers.google.com/identity/sign-in/web/reference#users
-    const profile = googleUser.getBasicProfile() // etc etc
+    // const profile = googleUser.getBasicProfile() // etc etc
     const token = googleUser.getAuthResponse().id_token;
     dispatch(SET_LOADING(true))
     axios({

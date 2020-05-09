@@ -9,7 +9,7 @@ export default function WelcomeSign() {
         <img src={logoKanbanium} alt="logo" />
       </div>
       <ReactTypingEffect
-        text={["Get productive", "Focus is the key"]}
+        text={["Get productive", "Always deliver more"]}
         speed={100}
         className="welcome-text"
         typingDelay={500}
