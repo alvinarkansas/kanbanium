@@ -4,7 +4,7 @@ import { FETCH_ACTIVITIES } from '../store/action';
 import Kanban from '../components/Kanban';
 import Nav from '../components/Nav';
 import { Spring } from 'react-spring/renderprops'
-// import { useSpring, animated } from 'react-spring';
+import Joyride from 'react-joyride';
 
 function Dashboard() {
   const dispatch = useDispatch();
@@ -15,14 +15,26 @@ function Dashboard() {
   const needsReview = activities.filter(act => act.category === 'Needs Review')
   const finished = activities.filter(act => act.category === 'Finished')
 
+  const run = true;
+  const steps = [
+    {
+      target: '#tour-add',
+      content: 'Type your activity then hit ENTER'
+    }
+  ]
+
   useEffect(() => {
     dispatch(FETCH_ACTIVITIES());
-  }, [dispatch])
+  }, [dispatch])  
 
   return (
     <>
       <Nav />
       <main>
+        <Joyride
+          steps={steps}
+          run={run}
+        />
         <Spring
           from={{ transform: 'translate3d(0,-40px,0)', opacity: 0 }}
           to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}>
@@ -43,10 +55,6 @@ function Dashboard() {
           to={{ transform: 'translate3d(0,0px,0)', opacity: 1 }}>
           {props => <Kanban title="Finished" acts={finished} props={props} />}
         </Spring>
-        {/* <Kanban title="Backlog" acts={backlog} />
-        <Kanban title="On Progress" acts={onProgress} />
-        <Kanban title="Needs Review" acts={needsReview} />
-        <Kanban title="Finished" acts={finished} /> */}
       </main>
     </>
   )

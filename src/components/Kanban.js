@@ -27,7 +27,7 @@ function Kanban({ title, acts, props }) {
       {
         title === 'Backlog'
           ?
-          <form className="add-act" onSubmit={addNewAct}>
+          <form className="add-act" id="tour-add" onSubmit={addNewAct}>
             <input type="text" placeholder="Type new activity here" onChange={changeAct} value={newAct} />
             <BounceLoader
               size={40}
