@@ -41,10 +41,7 @@ export default function SignInForm() {
           notification('danger', 'Oops', response.data.message);
         }
         if (response.statusText === 'Internal Server Error') {
-          response.data.err.errors.map(error => {
-            console.log(error.message);
-            notification('danger', 'Oops', error.message);
-          })
+          response.data.err.errors.map(error => notification('danger', 'Oops', error.message))
         }
       })
       .finally(_ => {
